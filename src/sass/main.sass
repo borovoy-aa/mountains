@@ -52,7 +52,7 @@
   position: absolute
   bottom: -390px
   left: -160px
-  background-image: repeating-linear-gradient(to bottom,rgb(247, 200, 190) 0%,rgb(211, 86, 79) 25%,rgb(161, 45, 77) 58.4%,rgb(126, 31, 75) 100%)
+  background-image: repeating-linear-gradient(180deg,#F7C879 0,#b73a4f 25%,#a12d4d 58.4%,#7e1f4b)
   transform: rotate(-55deg)
   border-radius: 190px
     
@@ -215,3 +215,76 @@
   width: 80px
   background-color: #d82a2f
   background-image: repeating-linear-gradient(to bottom,rgb(255, 199, 131) 0%,rgb(255, 70, 61) 40.4%,rgb(213, 42, 47) 56.1%,rgb(59, 45, 56) 100%)
+
+
+
+
+.star-1
+  top: 0rem
+  left: 18rem
+  animation: star-ani 10s infinite ease-out
+  animation-delay: 4s
+  &:after
+    top: 0px
+    left: 3px
+    animation: shooting-ani 10s infinite  ease-out
+
+.star-2
+  top: 4rem
+  left: 3rem
+  animation: star-ani 4s infinite ease-out
+  animation-delay: 5s
+  &:after
+    top: 0px
+    left: 3px
+    animation: shooting-ani 8s infinite  ease-out
+
+.star-3
+  top: 2rem
+  left: 10rem
+  animation: star-ani 10s infinite ease-out
+  &:after
+    top: 0px
+    left: 3px
+    animation: shooting-ani 12s infinite  ease-out
+
+.shooting-star
+  display: block
+  width: 4px
+  height: 4px
+  border-radius: 50%
+  background: #FFF
+  position: relative
+  transform-origin: 100% 0
+  animation-direction: normal
+  opacity: 0
+  &:after
+    content: ''
+    position: absolute
+    border: 2px solid #F00
+    border-width: 2px 150px 2px 150px
+    border-color: transparent transparent transparent #FFF
+    transform: rotate(-45deg) translate3d(1px, -1px, 0)
+    transform-origin: 0% 100%
+    animation-direction: normal
+
+@keyframes shooting-ani
+  0%
+
+  50%
+    transform: scale(1.2) rotate(-45deg) translate(0px, 0px)
+  100%
+    transform: scale(0.5) rotate(-45deg) translate(0px, -1px)
+
+
+@keyframes star-ani
+  0%
+    opacity: 0
+    transform: scale(0) rotate(-90deg) translate3d(0, 0, 0)
+  50%
+    opacity: 1
+    transform: scale(1) rotate(-90deg) translate3d(-200px, 200px, 0)
+    box-shadow: 0px 0px 20px 4px rgba(255,255,255,1)
+  100%
+    opacity: 0
+    transform: scale(1) rotate(-90deg) translate3d(-300px, 300px, 0)
